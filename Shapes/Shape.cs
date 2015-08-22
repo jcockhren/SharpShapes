@@ -11,13 +11,17 @@ namespace Shapes
     public abstract class Shape : IShape
     {
         // We need info about colors
-        Color fillColor;
-        Color borderColor;
+        // Below C# is creating the data members for us. Yaaay!
+        //Color fillColor;
+        //Color borderColor;
 
-        public Color FillColor { get; }
-        public Color BorderColor { get; }
+        /// <summary>
+        /// "protected set" allows for child classes to use the setter!
+        /// </summary>
+        public Color FillColor { get; protected set; }
+        public Color BorderColor { get; protected set; }
 
-        public float Area() { throw new NotImplementedException(); }
-        public float Perimeter() { throw new NotImplementedException(); }
+        public virtual float Area() { throw new NotImplementedException(); }
+        public virtual float Perimeter() { throw new NotImplementedException(); }
     }
 }
