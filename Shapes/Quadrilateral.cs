@@ -8,16 +8,84 @@ namespace Shapes
 {
     public class Quadrilateral : Shape
     {
-        public float Top { get; set; }
-        public float Bottom { get; set; }
-        public float Left { get; set; }
-        public float Right { get; set; }
+        private float bottom;
+        private float top;
+        private float left;
+        private float right;
 
-        // Calls Shape's Constructor that provides default fill and border colors.
-        public Quadrilateral() : base() {} 
-
-        public Quadrilateral(float top, float bottom, float left, float right)
+        public float Top
         {
+            get { return top; }
+
+            set
+            {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    top = value;
+                }
+            }
+        }
+
+        public float Bottom {
+            get { return bottom; }
+
+            set {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else {
+                    bottom = value;
+                }
+            }
+        }
+
+        public float Left
+        {
+            get { return left; }
+
+            set
+            {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    left = value;
+                }
+            }
+        }
+        public float Right
+        {
+            get { return right; }
+            set
+            {
+                if (value <= 0.0)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    right = value;
+                }
+            }
+        }
+
+            // Calls Shape's Constructor that provides default fill and border colors.
+            public Quadrilateral() : base() {}
+
+        // Shape's Constructor is called BEFORE the supplied code block.
+        public Quadrilateral(float top, float bottom, float left, float right) : base() 
+        {
+            this.Top = top;
+            this.Bottom = bottom;
+            this.Left = left;
+            this.Right = right;
         }
 
         public override float Perimeter()

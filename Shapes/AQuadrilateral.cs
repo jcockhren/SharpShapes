@@ -8,5 +8,6 @@ namespace Shapes
 {
     public abstract class AQuadrilateral
     {
+        // Exercise for reader.
     }
 }

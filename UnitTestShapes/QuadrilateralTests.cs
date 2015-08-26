@@ -16,6 +16,24 @@ namespace UnitTestShapes
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestQuadNoNegativeSides()
+        {
+            Quadrilateral myquad = new Quadrilateral();
+            myquad.Top = 2;
+            myquad.Right = 2;
+            myquad.Left = -2;
+            myquad.Bottom = 2;
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestQuadNoNegativeSidesInConstructor()
+        {
+            Quadrilateral myquad = new Quadrilateral(2, -2, 2, 2);
+        }
+
+        [TestMethod]
         public void TestQuadCanComputePerimeter()
         {
             Quadrilateral myquad = new Quadrilateral();
