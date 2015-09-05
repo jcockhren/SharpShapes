@@ -13,6 +13,10 @@ namespace Shapes
 
         }
 
+        /// <summary>
+        /// Calculate Area for a Shape
+        /// </summary>
+        /// <returns>Area as a float</returns>
         public override float Area()
         {
             return this.Top * this.Left;
